@@ -8,7 +8,7 @@
 	<description>The purpose of this project is to create a logging framework to allow developers to as seamlessly as possible integrate Splunk best practice logging semantics into their code. There are also custom handler/appender implementations for the 3 most prevalent Java logging frameworks in play.</description>
 	<organization>
 		<name>Damien Dallimore</name>
-		<url>https://github.com/damiendallimore</url>
+		<url>http://damiendallimore.github.io/</url>
 	</organization>
 	<licenses>
 		<license>
@@ -276,4 +276,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+    <connection>scm:git:git@github.com:damiendallimore/SplunkJavaLogging.git</connection>
+    <developerConnection>scm:git:git@github.com:damiendallimore/SplunkJavaLogging.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/damiendallimore/SplunkJavaLogging</url>
+  </scm>
 </project>
