@@ -92,9 +92,9 @@ Splunk Best Practice Logging Semantics
 
 * http://dev.splunk.com/view/logging-best-practices/SP-CAAADP6
 
-Introduction to the Splunk product and some of its capabilities
+Splunk documentation
 
-* http://docs.splunk.com/Documentation/Splunk/latest/User/SplunkOverview
+* http://docs.splunk.com/Documentation/Splunk
 
 ## Contact
 
