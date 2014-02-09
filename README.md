@@ -32,6 +32,10 @@ be deployed.In this case, Splunk Java Logging can be used to forward events to S
 Furthermore, in either scenario, you can still utilize the SplunkLogEvent class to construct your log events in best practice 
 semantic format.
 
+#Log4J2
+
+I have included a sample configuration file for sending events to Splunk over raw TCP and UDP
+
 ## Resilience
 
 The HTTP REST and Raw TCP handler/appenders have autonomous socket reconnection logic in case of connection failures.
@@ -49,7 +53,12 @@ definitions for your various target Indexers.
 
 ## Load Balancing
 
-Still in the think tank.
+If you wish to have load balancing of your log events, then configure your logging appenders to send to a Splunk Universal Forwarder acting
+as a load balancing intermediary before you Indexer Cluster.
+
+## Failover
+
+Log4J 2 has a Failover appender you can use : http://logging.apache.org/log4j/2.x/manual/appenders.html#FailoverAppender
 
 ## Thread Safety
 

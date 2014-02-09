@@ -24,7 +24,7 @@
 			<email>ddallimore@splunk.com</email>
 		</developer>
 	</developers>
-	
+
 	<prerequisites>
 		<maven>3.0.4</maven>
 	</prerequisites>
@@ -41,11 +41,16 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
-  	</dependency>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j.adapters</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>2.0-beta9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -72,6 +77,16 @@
 			<artifactId>logback-core</artifactId>
 			<version>1.0.13</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.0-beta9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.0-beta9</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>
@@ -80,7 +95,7 @@
 		</repository>
 	</repositories>
 	<url>https://github.com/damiendallimore/SplunkJavaLogging</url>
-		<build>
+	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -277,9 +292,9 @@
 		</plugins>
 	</build>
 	<scm>
-    <connection>scm:git:git@github.com:damiendallimore/SplunkJavaLogging.git</connection>
-    <developerConnection>scm:git:git@github.com:damiendallimore/SplunkJavaLogging.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>https://github.com/damiendallimore/SplunkJavaLogging</url>
-  </scm>
+		<connection>scm:git:git@github.com:damiendallimore/SplunkJavaLogging.git</connection>
+		<developerConnection>scm:git:git@github.com:damiendallimore/SplunkJavaLogging.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/damiendallimore/SplunkJavaLogging</url>
+	</scm>
 </project>

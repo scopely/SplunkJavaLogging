@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Example log4j2 configuration using a Splunk Raw TCP and UDP Appender-->
+
+
+<Configuration status="info" name="MySplunkApp" packages="">
+
+	<Appenders>
+
+		<Socket name="splunkrawtcp" protocol="TCP" host="ubuntu-splunk" port="5151">
+			<PatternLayout pattern="%m%n" />
+		</Socket>
+		
+		<Socket name="splunkrawudp" protocol="UDP" host="ubuntu-splunk" port="5152">
+			<PatternLayout pattern="%m%n" />
+		</Socket>
+
+
+		<Console name="stdout" target="SYSTEM_OUT">
+			<PatternLayout pattern="%m%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="stdout" />
+		</Root>
+		<logger name="splunk.logger" additivity="false" level="INFO">
+			<appender-ref ref="splunkrawtcp" />
+			<appender-ref ref="splunkrawudp" />
+		</logger>
+	</Loggers>
+
+</Configuration>
