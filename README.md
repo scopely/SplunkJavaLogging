@@ -1,12 +1,13 @@
 # Splunk Java Logging Framework
 
 The purpose of this project is to create a logging framework to allow developers to as seamlessly as possible
-integrate Splunk best practice logging semantics into their code.
-There are also custom handler/appender implementations for the 3 most prevalent Java logging frameworks in play.
+integrate Splunk best practice logging semantics into their code and easily send their log events to Splunk.
+There are also custom handler/appender implementations and config examples for the most prevalent Java logging frameworks in play.
 
 1.	LogBack
-2.	Log4j
-3.	java.util logging
+2.	Log4j 1.x
+3.  Log4j 2
+4.	java.util logging
 
 This framework contains :
 
@@ -20,8 +21,20 @@ This framework contains :
 *   Example logging configuration files
 *   Javadocs
 
-If you want to use UDP to send events to Splunk , then Log4j and Logback  already have Syslog Appenders.
+If you want to use UDP to send events to Splunk , then Log4j 1.x and Logback  already have Syslog Appenders.
+Log4j 2 has a UDP Appender and Syslog Appender.
 And of course you can still use any File appenders and have the file monitored by a Splunk Universal Forwarder.
+
+I generally recommend using the raw TCP handlers/appenders I have provided , they perform the best, and have features coded into them for 
+auto connection re-establishment and configurable buffering of log events which will get flushed upon reconnection.
+
+## Logging frameworks galore
+
+Log4j 2 and Log4j 1.x are very distinct from one another.
+Logback was actually the "new version" of Log4j 1.x , and then Log4J 2 attempted to improve upon Logback.
+This rather convoluted family tree has essentially transpired with 3 different logging frameworks in play, each with different characteristics.
+Log4j 1.x still has a very large legacy usage base in enterprise software therefore warrants addressing with its own custom appenders 
+and example configurations.
 
 ## Splunk Universal Forwarder vs Splunk Java Logging
 
@@ -32,9 +45,6 @@ be deployed.In this case, Splunk Java Logging can be used to forward events to S
 Furthermore, in either scenario, you can still utilize the SplunkLogEvent class to construct your log events in best practice 
 semantic format.
 
-#Log4J2
-
-I have included a sample configuration file for sending events to Splunk over raw TCP and UDP
 
 ## Resilience
 
@@ -59,6 +69,11 @@ as a load balancing intermediary before you Indexer Cluster.
 ## Failover
 
 Log4J 2 has a Failover appender you can use : http://logging.apache.org/log4j/2.x/manual/appenders.html#FailoverAppender
+There is an example in config/log4j2.xml
+
+## Routing
+
+Log4J 2 has a Routing appender you can use : http://logging.apache.org/log4j/2.x/manual/appenders.html#RoutingAppender
 
 ## Thread Safety
 
