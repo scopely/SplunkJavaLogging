@@ -39,8 +39,8 @@ public class Example {
 		// add a custom field
 		event.addPair("somefieldname", "foobar");
 
-		// log a splunk log event generated string
-		logger.info(event.toString());
+		// log a splunk log event generated string using lazy string formatting
+		logger.info("{}",event);
 
 	}
 
